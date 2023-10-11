@@ -66,5 +66,16 @@ namespace Peliculas
                 }
             }
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Crud.FilterExpression = "idDirector =" + DropDownList2.SelectedValue;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Crud.FilterExpression = string.Empty;
+            Crud.FilterParameters.Clear();
+        }
     }
 }

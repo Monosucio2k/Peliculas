@@ -22,12 +22,23 @@
                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataDirector" DataTextField="nombreApellido" DataValueField="id"></asp:DropDownList>
 </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" Width="107px" />
             </td>
                 <td>
-                    <asp:Button ID="Button2" runat="server" Text="Modificar" OnClick="Button2_Click" />
+                    <asp:Button ID="Button2" runat="server" Text="Modificar" OnClick="Button2_Click" Width="107px" />
 </td>
             </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataDirector" DataTextField="nombreApellido" DataValueField="id" Height="16px" Width="303px"></asp:DropDownList>
+                    </td>
+                     <td>
+                         <asp:Button ID="Button3" runat="server" Text="Filtrar" OnClick="Button3_Click" Width="107px" />
+                    </td>
+                     <td>
+                         <asp:Button ID="Button4" runat="server" Text="Reset Filtro" OnClick="Button4_Click" Width="109px" />
+                    </td>
+                </tr>
         </table>
         <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="Crud" EmptyDataText="No hay registros de datos para mostrar." Width="348px" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
