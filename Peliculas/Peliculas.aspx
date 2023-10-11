@@ -24,18 +24,24 @@
             <td>
                 <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
             </td>
+                <td>
+                    <asp:Button ID="Button2" runat="server" Text="Modificar" OnClick="Button2_Click" />
+</td>
             </tr>
         </table>
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="Crud" EmptyDataText="No hay registros de datos para mostrar." Width="348px" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="Crud" EmptyDataText="No hay registros de datos para mostrar." Width="348px" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="Id" ReadOnly="True" SortExpression="id" InsertVisible="False" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
-                    <asp:BoundField DataField="idDirector" SortExpression="idDirector" />
+                    <asp:BoundField DataField="idDirector" SortExpression="idDirector" InsertVisible="True" Visible="True" />
                     <asp:BoundField DataField="apellido" HeaderText="Apellido Director" SortExpression="apellido" />
                     <asp:BoundField DataField="nombre1" HeaderText="Nombre Director" SortExpression="nombre1" />
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:CommandField ShowDeleteButton="True" ShowSelectButton="True" ButtonType="Image" DeleteImageUrl="~/Icons/icons8-eliminar.gif" HeaderText="Acciones" SelectImageUrl="~/Icons/icons8-cursor-de-mano-50.png" ControlStyle-Width="20" ItemStyle-HorizontalAlign="Left" ItemStyle-Wrap="False" ControlStyle-BorderStyle="None">
+                    <ControlStyle BorderWidth="20px" />
+                    <ItemStyle HorizontalAlign="Center" />
+                    </asp:CommandField>
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" HorizontalAlign="Center" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -57,9 +63,9 @@
                     <asp:ControlParameter ControlID="DropDownList1" Name="idDirector" PropertyName="SelectedValue" Type="Int32" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="nombre" Type="String" />
-                    <asp:Parameter Name="idDirector" Type="Int32" />
-                    <asp:Parameter Name="id" Type="Int32" />
+                    <asp:ControlParameter ControlID="TextBox1" Name="nombre" PropertyName="Text" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList1" Name="idDirector" PropertyName="SelectedValue" Type="Int32" />
+                    <asp:ControlParameter ControlID="GridView1" Name="id" PropertyName="SelectedValue" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataDirector" runat="server" ConnectionString="<%$ ConnectionStrings:cadena %>" SelectCommand="SELECT id, nombre + ' ' + apellido AS nombreApellido

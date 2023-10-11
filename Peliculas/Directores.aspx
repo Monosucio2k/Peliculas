@@ -33,7 +33,11 @@
                     <asp:BoundField DataField="id" HeaderText="Id" SortExpression="id" ReadOnly="True" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" SortExpression="nombre" />
                     <asp:BoundField DataField="apellido" HeaderText="Apellido" SortExpression="apellido" />
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Icons/icons8-eliminar.gif" EditImageUrl="~/Icons/icons8-editar.gif" EditText="Editar" HeaderText="Acciones" ShowDeleteButton="True" ShowEditButton="True" ControlStyle-Width="20"  FooterStyle-VerticalAlign="NotSet" FooterStyle-HorizontalAlign="NotSet" ItemStyle-HorizontalAlign="Center" CancelImageUrl="~/Icons/icons8-cancelar.gif" CancelText="" UpdateImageUrl="~/Icons/icons8-aceptar.gif" UpdateText="" >
+<ControlStyle Width="20px"></ControlStyle>
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
+                    </asp:CommandField>
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

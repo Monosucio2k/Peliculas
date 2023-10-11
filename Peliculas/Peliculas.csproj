@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Directores.aspx" />
+    <Content Include="Icons\icons8-aceptar.gif" />
+    <Content Include="Icons\icons8-cancelar.gif" />
+    <Content Include="Icons\icons8-cursor-de-mano-50.png" />
+    <Content Include="Icons\icons8-editar-26.png" />
+    <Content Include="Icons\icons8-editar.gif" />
+    <Content Include="Icons\icons8-eliminar.gif" />
     <Content Include="Menu.aspx" />
     <Content Include="Peliculas.aspx" />
     <Content Include="Web.config" />

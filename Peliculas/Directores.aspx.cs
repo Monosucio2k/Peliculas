@@ -26,9 +26,13 @@ namespace Peliculas
                 }
                 catch (Exception ex)
                 {
+                    DateTime now = DateTime.Now;
                     StreamWriter streamWriter = new StreamWriter($"{Server.MapPath(".")}/ExceptionLog.txt", true);
-                    streamWriter.WriteLine(ex.Message);
+                    streamWriter.WriteLine(now + "--"+ ex.Message.ToString());
+                    streamWriter.WriteLine("StackTrace:");
+                    streamWriter.WriteLine(ex.StackTrace.ToString());
                     streamWriter.WriteLine("---------");
+                    streamWriter.Close();
                 }
             }
         }

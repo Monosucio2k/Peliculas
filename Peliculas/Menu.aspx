@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
         <div>
             <div>
-    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Directores.aspx">Gestionar Peliculas</asp:HyperLink>
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Directores.aspx">Gestionar Directores</asp:HyperLink>
     <br />
-    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Peliculas.aspx">Gestionar Directores</asp:HyperLink>
+    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Peliculas.aspx">Gestionar Peliculas</asp:HyperLink>
 
 </div>
         </div>
